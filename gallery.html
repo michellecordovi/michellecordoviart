@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Gallery · Your Name</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Fraunces:opsz,wght@9..144,500;9..144,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- NAVBAR (same on every page). Change "Your Name" to your name. -->
+  <header class="site-header">
+    <a class="logo" href="index.html">Michelle Cordovi</a>
+    <button class="menu-toggle" aria-label="Menu" aria-expanded="false"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    <nav class="nav" id="nav">
+      <a href="index.html">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="gallery.html" class="active">Gallery</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="gallery-intro">
+        <h2>Gallery</h2>
+        <p>A little wall of pieces I love, whether or not they're for sale. Tap any one to see it bigger.</p>
+      </div>
+
+      <!-- To add a piece, copy one of the lines below and change the image and the two titles. -->
+      <div class="mosaic">
+      <button class="tile t0" type="button"><img src="images/gallery-1.jpg" alt="Handmade paper florals"><span class="cap">Handmade paper florals</span></button>
+      <button class="tile t1" type="button"><img src="images/gallery-2.jpg" alt="Coastal landscape, acrylic"><span class="cap">Coastal landscape, acrylic</span></button>
+      <button class="tile t2" type="button"><img src="images/gallery-3.jpg" alt="Garden sketchbook"><span class="cap">Garden sketchbook</span></button>
+      <button class="tile t3" type="button"><img src="images/gallery-4.jpg" alt="Linocut test print"><span class="cap">Linocut test print</span></button>
+      <button class="tile t4" type="button"><img src="images/gallery-5.jpg" alt="Peaches and pitcher"><span class="cap">Peaches and pitcher</span></button>
+      <button class="tile t5" type="button"><img src="images/gallery-6.jpg" alt="Oil pastel poppies"><span class="cap">Oil pastel poppies</span></button>
+      </div>
+
+      <p class="center-cta"><a class="btn" href="shop.html">See what's in the shop</a></p>
+
+      <!-- The big viewer that opens when you tap a piece -->
+      <div class="lightbox" id="lightbox" hidden>
+        <button class="lb-close" aria-label="Close">&times;</button>
+        <button class="lb-nav lb-prev" aria-label="Previous">&#8249;</button>
+        <figure><img alt=""><figcaption></figcaption></figure>
+        <button class="lb-nav lb-next" aria-label="Next">&#8250;</button>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER (same on every page). Change the Instagram link below. -->
+  <footer class="site-footer">
+    <a class="logo" href="index.html">Your Name</a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="contact.html">Contact</a>
+      <a class="ig-link" href="https://instagram.com/yourhandle" target="_blank" rel="noopener" aria-label="Instagram"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor"/></svg></a>
+    </nav>
+    <p class="fine">&copy; <span id="year"></span> Your Name. All art made by hand.</p>
+  </footer>
+
+  <script src="main.js"></script>
+  <script>
+    // Opens the big viewer when a piece is tapped
+    const tiles = [...document.querySelectorAll(".tile")];
+    const box = document.getElementById("lightbox");
+    const bigImg = box.querySelector("img");
+    const caption = box.querySelector("figcaption");
+    let current = 0;
+
+    function show(i) {
+      current = (i + tiles.length) % tiles.length;
+      bigImg.src = tiles[current].querySelector("img").src;
+      caption.textContent = tiles[current].querySelector(".cap").textContent;
+    }
+    function close() { box.hidden = true; document.body.style.overflow = ""; }
+
+    tiles.forEach((t, i) => t.onclick = () => { show(i); box.hidden = false; document.body.style.overflow = "hidden"; });
+    box.querySelector(".lb-close").onclick = close;
+    box.querySelector(".lb-prev").onclick = () => show(current - 1);
+    box.querySelector(".lb-next").onclick = () => show(current + 1);
+    box.onclick = e => { if (e.target === box) close(); };
+    document.onkeydown = e => {
+      if (box.hidden) return;
+      if (e.key === "Escape") close();
+      if (e.key === "ArrowRight") show(current + 1);
+      if (e.key === "ArrowLeft") show(current - 1);
+    };
+  </script>
+</body>
+</html>

@@ -1,0 +1,76 @@
+[
+  {
+    "id": "sunflower-field",
+    "title": "Sunflower Field",
+    "type": "original",
+    "medium": "Watercolor",
+    "size": "9 x 12 in",
+    "price": 120,
+    "available": true,
+    "images": ["images/sunflower-field.jpg"],
+    "description": "A sunny, loose watercolor of sunflowers leaning toward the light. Painted on cold-press paper, ships unframed.",
+    "stripeLink": "https://buy.stripe.com/your-link-here"
+  },
+  {
+    "id": "poppy-morning",
+    "title": "Poppy Morning",
+    "type": "print",
+    "medium": "Watercolor print",
+    "images": ["images/poppy-morning.jpg", "images/poppy-morning-2.jpg"],
+    "description": "Bright red poppies from my original watercolor, printed on thick matte paper.",
+    "sizes": [
+      { "label": "5 x 7 in",   "price": 18, "stripeLink": "https://buy.stripe.com/your-link-here" },
+      { "label": "8 x 10 in",  "price": 28, "stripeLink": "https://buy.stripe.com/your-link-here" },
+      { "label": "11 x 14 in", "price": 42, "stripeLink": "https://buy.stripe.com/your-link-here" }
+    ]
+  },
+  {
+    "id": "linocut-tulips",
+    "title": "Linocut Tulips",
+    "type": "print",
+    "medium": "Linocut print",
+    "images": ["images/linocut-tulips.jpg"],
+    "description": "Hand-carved and hand-printed tulips in warm red ink on cream paper.",
+    "sizes": [
+      { "label": "5 x 7 in",  "price": 22, "stripeLink": "https://buy.stripe.com/your-link-here" },
+      { "label": "8 x 10 in", "price": 34, "stripeLink": "https://buy.stripe.com/your-link-here" }
+    ]
+  },
+  {
+    "id": "lavender-still-life",
+    "title": "Lavender Still Life",
+    "type": "original",
+    "medium": "Acrylic",
+    "size": "8 x 10 in",
+    "price": 95,
+    "available": true,
+    "images": ["images/lavender-still-life.jpg"],
+    "description": "A little vase of lavender on a sunny windowsill. Acrylic on canvas panel.",
+    "stripeLink": "https://buy.stripe.com/your-link-here"
+  },
+  {
+    "id": "wild-marigolds",
+    "title": "Wild Marigolds",
+    "type": "original",
+    "medium": "Oil pastel",
+    "size": "6 x 8 in",
+    "price": 70,
+    "available": true,
+    "images": ["images/wild-marigolds.jpg"],
+    "description": "Buttery oil pastel marigolds with lots of texture and warmth.",
+    "stripeLink": "https://buy.stripe.com/your-link-here"
+  },
+  {
+    "id": "peony-study",
+    "title": "Peony Study",
+    "type": "print",
+    "medium": "Watercolor print",
+    "images": ["images/peony-study.jpg"],
+    "description": "Soft, ruffled peonies in pinks and corals, printed from my original watercolor.",
+    "sizes": [
+      { "label": "5 x 7 in",   "price": 18, "stripeLink": "https://buy.stripe.com/your-link-here" },
+      { "label": "8 x 10 in",  "price": 28, "stripeLink": "https://buy.stripe.com/your-link-here" },
+      { "label": "11 x 14 in", "price": 42, "stripeLink": "https://buy.stripe.com/your-link-here" }
+    ]
+  }
+]
